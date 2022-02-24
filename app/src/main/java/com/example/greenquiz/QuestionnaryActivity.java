@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionnaryActivity extends AppCompatActivity {
 
     private int score = 0;
+
+    private Question[] questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
