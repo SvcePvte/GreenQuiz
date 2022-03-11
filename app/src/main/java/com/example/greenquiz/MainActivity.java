@@ -14,13 +14,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button main_btn_lancer = (Button) findViewById(R.id.main_btn_lancer);
 
         main_btn_lancer.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                 Intent myIntent = new Intent(MainActivity.this, QuestionnaryActivity.class);
+                myIntent.putExtra("numQuestion",0);
+                myIntent.putExtra("score", 0);
                 startActivity(myIntent);
            }
         });

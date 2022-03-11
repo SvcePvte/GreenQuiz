@@ -16,7 +16,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.result_activity);
 
         TextView score = findViewById(R.id.resul_score);
-        score.setText("score :" + getIntent().getStringExtra("score"));
+        score.setText("score :" + getIntent().getIntExtra("score", 0));
 
         Button result_btn_partager = (Button) findViewById(R.id.result_btn_partager);
         /* Bouton partager

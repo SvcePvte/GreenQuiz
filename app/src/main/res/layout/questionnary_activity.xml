@@ -2,40 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <TextView
+        android:id="@+id/label"
         android:text="Possédez vous une voiture ?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <RadioGroup
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/radio_btn_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Oui"/>
+            android:text="Oui"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
             android:id="@+id/radio_btn_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Non"/>
+            android:text="Non"
+            android:onClick="onRadioButtonClicked"/>
 
     </RadioGroup>
 
     <TextView
         android:id="@+id/scoreendirect"
+        android:text="[SCORE]"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/qestionnary_btn_valider"
-        android:text="Valider QUIZ"
+        android:text="[TEXT]"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
