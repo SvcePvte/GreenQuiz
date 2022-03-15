@@ -27,5 +27,6 @@
         </activity>
 
     </application>
-
+    // Ajout d’autorisations pour accéder au stockage dans le fichier AndroidManifest.xml
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>
