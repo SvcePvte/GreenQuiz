@@ -1,9 +1,13 @@
 package com.example.greenquiz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,5 +29,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
            }
         });
+
+        //changeActivityToLeaderboard();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.leaderboard:
+                changeActivityToLeaderboard();
+                break;
+
+            case R.id.quitter_button:
+                System.exit(0);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void changeActivityToLeaderboard()
+    {
+        Intent myIntent = new Intent(MainActivity.this, LeaderboardActivity.class);
+        startActivity(myIntent);
     }
 }

@@ -39,7 +39,7 @@
 
     <Button
         android:id="@+id/qestionnary_btn_valider"
-        android:text="[TEXT]"
+        android:text="@string/validate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenQuiz">
         <activity
+            android:name=".LeaderboardActivity"
+            android:label="Leaderboard"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:label="GreenQuiz"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,14 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".QuestionnaryActivity">
-        </activity>
-
-        <activity
-            android:name=".ResultActivity">
-        </activity>
-
+        <activity android:name=".QuestionnaryActivity"></activity>
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>
