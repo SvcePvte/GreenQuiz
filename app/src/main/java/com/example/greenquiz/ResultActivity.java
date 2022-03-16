@@ -3,6 +3,7 @@ package com.example.greenquiz;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -37,7 +38,6 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         this.imageView = (ImageView) this.findViewById(R.id.imageView);
 
-
         getDrapeau();
         afficherResultat();
 
@@ -50,6 +50,25 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
             }
         });
 
+        Button btn_leaderboard = (Button) findViewById(R.id.result_btn_classement);
+        btn_leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivityToLeaderboard();
+            }
+        });
+
+        Button btn_twitter = (Button) findViewById(R.id.reslt_btn_twitter);
+        btn_twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String msg = "Score GreenQuiz: " + score;
+                String tweetUrl = "https://twitter.com/intent/tweet?text=" + msg + " &url="
+                        + "";
+                Uri uri = Uri.parse(tweetUrl);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            }
+        });
     }
 
     public void openDialog() {
@@ -69,7 +88,6 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
         Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
         btn_partager.setEnabled(false);
-
     }
 
     public String getDrapeau () {
@@ -100,5 +118,40 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
             TextView presentation_description = findViewById(R.id.presentation_score_texte);
             presentation_description.setText(country.getDescription());
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.menu_result, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.share:
+                shareScore();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void changeActivityToLeaderboard()
+    {
+        Intent myIntent = new Intent(ResultActivity.this, LeaderboardActivity.class);
+        startActivity(myIntent);
+    }
+
+    private void shareScore()
+    {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Score GreenQuiz: " + score);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }
