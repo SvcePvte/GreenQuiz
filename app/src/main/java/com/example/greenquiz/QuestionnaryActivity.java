@@ -37,6 +37,11 @@ public class QuestionnaryActivity extends AppCompatActivity {
         TextView text = findViewById(R.id.label);
         text.setText(currentQuestion.getLibelle());
 
+        TextView indentation = findViewById(R.id.indentation_question);
+        int nb_questions = questions.length;
+        int question_actuel = numQuestion+1;
+        indentation.setText("QUESTION [ " + question_actuel + " / " + nb_questions + " ]");
+
         Button button = findViewById(R.id.qestionnary_btn_valider);
         button.setEnabled(false);
 
@@ -96,4 +101,5 @@ public class QuestionnaryActivity extends AppCompatActivity {
 
         return result;
     }
+
 }
