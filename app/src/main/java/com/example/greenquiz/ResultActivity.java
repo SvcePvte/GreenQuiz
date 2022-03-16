@@ -1,5 +1,6 @@
 package com.example.greenquiz;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,15 +11,17 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements PopUp.PopUpListener {
 
     private ImageView imageView;
     private int score = 0;
@@ -33,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
 
         this.imageView = (ImageView) this.findViewById(R.id.imageView);
 
+
         getDrapeau();
         afficherResultat();
 
@@ -41,9 +45,25 @@ public class ResultActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                onButtonShowPopupWindowClick(v);
+                openDialog();
             }
         });
+
+    }
+
+    public void openDialog() {
+        PopUp popup = new PopUp();
+        popup.show(getSupportFragmentManager(), "popup");
+    }
+
+    @Override
+    public void sendText(String pseudo) {
+        // RODO envoyer code Classement
+
+        Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
+        Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
+        btn_partager.setEnabled(false);
+
     }
 
     public String getDrapeau () {
@@ -74,56 +94,5 @@ public class ResultActivity extends AppCompatActivity {
             TextView presentation_description = findViewById(R.id.presentation_score_texte);
             presentation_description.setText(country.getDescription());
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflaterMenu = getMenuInflater();
-        inflaterMenu.inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.main_item:
-                Intent main = new Intent(ResultActivity.this, MainActivity.class);
-                startActivity(main);
-                break;
-            case R.id.questionnary_item:
-                Intent questionnary = new Intent(ResultActivity.this, QuestionnaryActivity.class);
-                startActivity(questionnary);
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void onButtonShowPopupWindowClick(View view) {
-
-        // inflate the layout of the popup window
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup, null);
-
-        // create the popup window
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // lets taps outside the popup also dismiss it
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-        // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        // dismiss the popup window when touched
-        popupView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
-            }
-        });
     }
 }

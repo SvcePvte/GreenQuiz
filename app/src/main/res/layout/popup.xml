@@ -3,32 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#62def8"
-    android:layout_marginTop="500dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginLeft="16dp">
+    android:padding="16dp">
 
     <EditText
-        android:id="@+id/user_pseudo"
+        android:id="@+id/edit_pseudo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pseudo :"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:hint="Pseudo : "/>
 
-    <Button
-        android:text="Valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_pseudo"
-        android:layout_marginLeft="260dp"/>
 
-    <Button
-        android:text="Annuler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_pseudo"
-        android:layout_marginLeft="16dp"/>
 
 
 </RelativeLayout>
