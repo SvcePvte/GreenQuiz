@@ -25,6 +25,7 @@ public class PopUp extends AppCompatDialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -49,7 +50,6 @@ public class PopUp extends AppCompatDialogFragment {
         final AlertDialog dialog = builder.create();
         dialog.show();
 
-        //((AlertDialog) getDialog()).getButton(Dialog.BUTTON_POSITIVE).setEnabled(false);
         Button b = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         b.setEnabled(false);
 
@@ -62,8 +62,10 @@ public class PopUp extends AppCompatDialogFragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                ((AlertDialog) getDialog()).getButton(Dialog.BUTTON_POSITIVE).setEnabled(false);
-                Log.d("MSG", "MON MSG");
+                if(editTextPseudo.getText().toString().length() > 0)
+                    ((AlertDialog) getDialog()).getButton(Dialog.BUTTON_POSITIVE).setEnabled(true);
+                else
+                    ((AlertDialog) getDialog()).getButton(Dialog.BUTTON_POSITIVE).setEnabled(false);
             }
 
             @Override
@@ -72,7 +74,7 @@ public class PopUp extends AppCompatDialogFragment {
             }
         });
 
-        return builder.create();
+        return dialog;
     }
 
     @Override
