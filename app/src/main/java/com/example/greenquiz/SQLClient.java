@@ -28,6 +28,11 @@ public class SQLClient extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // On créé la BDD si besoin
         db.execSQL(SQLClient.SQL_CREATE);
+
+        db.execSQL("insert into Users values(null, 'Paul', 100);");
+        db.execSQL("insert into Users values(null, 'Léo', 500);");
+        db.execSQL("insert into Users values(null, 'Max', 300);");
+        db.execSQL("insert into Users values(null, 'Guillaume', 800);");
     }
 
     @Override

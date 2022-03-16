@@ -2,6 +2,7 @@ package com.example.greenquiz;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -59,6 +60,11 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     @Override
     public void sendText(String pseudo) {
         // RODO envoyer code Classement
+
+        SQLClient bdd = new SQLClient(this);
+        SQLiteDatabase dbW = bdd.getWritableDatabase();
+        dbW.execSQL("insert into Users values(null, '" + pseudo + "', " + 123 + ");");
+        dbW.close();
 
         Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
         Button btn_partager = (Button) findViewById(R.id.result_btn_partager);

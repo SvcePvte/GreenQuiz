@@ -46,9 +46,9 @@ public class LeaderboardActivity extends AppCompatActivity {
         user_name = new ArrayList<>();
         user_score = new ArrayList<>();
 
-        bdd.deleteAllData();
+        //bdd.deleteAllData();
 
-        this.saveData(bdd);
+        //this.saveData(bdd);
 
         storeDataInArrays();
 
