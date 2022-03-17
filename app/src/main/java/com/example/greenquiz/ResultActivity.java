@@ -3,6 +3,7 @@ package com.example.greenquiz;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -25,12 +26,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity implements PopUp.PopUpListener {
 
     private ImageView imageView;
+    private int score = 0;
 
     private String drapeau;
-    private int classement[] = {0, 1, 2, 3, 4};
-
-    private int resulat;
-
+    private int classement[] = {0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +37,6 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         setContentView(R.layout.result_activity);
 
         this.imageView = (ImageView) this.findViewById(R.id.imageView);
-
-        resulat = getIntent().getIntExtra("score",0);
-
-        Toast.makeText(this, "Votre score : " + resulat, Toast.LENGTH_LONG).show();
 
         getDrapeau();
         afficherResultat();
@@ -55,6 +50,25 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
             }
         });
 
+        Button btn_leaderboard = (Button) findViewById(R.id.result_btn_classement);
+        btn_leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivityToLeaderboard();
+            }
+        });
+
+        Button btn_twitter = (Button) findViewById(R.id.reslt_btn_twitter);
+        btn_twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String msg = "Score GreenQuiz: " + score;
+                String tweetUrl = "https://twitter.com/intent/tweet?text=" + msg + " &url="
+                        + "";
+                Uri uri = Uri.parse(tweetUrl);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            }
+        });
     }
 
     public void openDialog() {
@@ -64,25 +78,30 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
     @Override
     public void sendText(String pseudo) {
+        // RODO envoyer code Classement
 
         SQLClient bdd = new SQLClient(this);
         SQLiteDatabase dbW = bdd.getWritableDatabase();
-        dbW.execSQL("insert into Users values(null, '" + pseudo + "', " + this.resulat + ");");
+        dbW.execSQL("insert into Users values(null, '" + pseudo + "', " + 123 + ");");
         dbW.close();
 
-        Toast.makeText(this, "Votre partie a bien été enregistrée " + pseudo, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
         Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
         btn_partager.setEnabled(false);
-
     }
 
     public String getDrapeau () {
 
-        for (int i = 0; i < classement.length; i++)
-            if (i == this.resulat) {
-                drapeau = Country.values()[i].name().toLowerCase();
-                break;
-            }
+        int borneInf = 0;
+        int borneSup = 100;
+        for (int i = 0; i <= 10  ; i++) {
+           if (borneInf <= this.score && this.score <= borneSup){
+               drapeau = Country.values()[i].name().toLowerCase();
+               break;
+           }
+           borneSup += 100;
+           borneInf += 100;
+       }
         return drapeau;
     }
 
@@ -111,12 +130,8 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.main_activity:
-                changeActivityToLeaderboard();
-                break;
-
-            case R.id.quitter_button:
-                System.exit(0);
+            case R.id.share:
+                shareScore();
                 break;
 
             default:
@@ -127,7 +142,16 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
     private void changeActivityToLeaderboard()
     {
-        Intent myIntent = new Intent(ResultActivity.this, MainActivity.class);
+        Intent myIntent = new Intent(ResultActivity.this, LeaderboardActivity.class);
         startActivity(myIntent);
+    }
+
+    private void shareScore()
+    {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Score GreenQuiz: " + score);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

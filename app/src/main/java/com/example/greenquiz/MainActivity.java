@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setAppLocal("fr");
 
         Button main_btn_lancer = (Button) findViewById(R.id.main_btn_lancer);
-
         main_btn_lancer.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflaterMenu = getMenuInflater();
-        inflaterMenu.inflate(R.menu.menu, menu);
+        inflaterMenu.inflate(R.menu.menu_main, menu);
         return true;
     }
 

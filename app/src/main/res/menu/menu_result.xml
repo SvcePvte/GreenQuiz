@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/main_activity"
-        android:title="Accueil"
-        android:icon="@drawable/ic_back_main_activity"
-        app:showAsAction="always"
-        />
 
     <item
-        android:id="@+id/option1"
-        android:title="Option1"
-        />
+        android:id="@+id/home"
+        android:title="home"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/quitter_button"
-        android:title="Quitter"
-        />
+        android:id="@+id/share"
+        android:title="share"
+        android:icon="@drawable/ic_share"
+        app:showAsAction="always" />
 </menu>
