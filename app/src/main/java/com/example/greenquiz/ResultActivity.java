@@ -43,7 +43,6 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
         btn_partager.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 openDialog();
@@ -130,6 +129,10 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.home:
+                Intent myIntent = new Intent(ResultActivity.this, MainActivity.class);
+                startActivity(myIntent);
+                break;
             case R.id.share:
                 shareScore();
                 break;
