@@ -6,14 +6,17 @@
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2725" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/editborder.xml" value="0.2725" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2725" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_trophy.xml" value="0.253" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/activity_main.xml" value="0.23236331569664903" />
-        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/result_activity.xml" value="0.23236331569664903" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/result_activity.xml" value="0.1" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_leaderboard.xml" value="0.2509057971014493" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/popup.xml" value="0.1" />
-        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/questionnary_activity.xml" value="0.25" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/questionnary_activity.xml" value="0.1" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/result_activity.xml" value="0.2" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/test.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/menu/menu_result.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

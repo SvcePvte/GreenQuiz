@@ -2,14 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/leaderboard"
-        android:title="leaderboard"
-        android:icon="@drawable/ic_trophy"
-        app:showAsAction="always" />
+        android:id="@+id/main_activity"
+        android:title="Accueil"
+        android:icon="@drawable/ic_back_main_activity"
+        app:showAsAction="always"
+        />
 
     <item
-        android:id="@+id/translate_app"
-        android:title="@string/translate_app"
+        android:id="@+id/option1"
+        android:title="Option1"
         />
 
     <item

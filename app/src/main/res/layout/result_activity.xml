@@ -14,7 +14,7 @@
         android:layout_alignParentBottom="true">
         <Button
             android:id="@+id/result_btn_partager"
-            android:text="Enregistrer dans le classement"
+            android:text="@string/register_leaderboard_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -4,12 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setAppLocal("fr");
 
         Button main_btn_lancer = (Button) findViewById(R.id.main_btn_lancer);
 
@@ -29,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
            }
         });
+
+        Toast.makeText(this, "langue" + Locale.getDefault().getDisplayLanguage(), Toast.LENGTH_LONG).show();
+
     }
 
     @Override
@@ -41,10 +53,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.translate_app:
+
+                if (Locale.getDefault().getDisplayLanguage() == "fr") {
+                    setAppLocal("en");
+                } else {
+                    setAppLocal("fr");
+                }
+                break;
             case R.id.leaderboard:
                 changeActivityToLeaderboard();
-                break;
-
             case R.id.quitter_button:
                 System.exit(0);
                 break;
@@ -59,5 +77,17 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent myIntent = new Intent(MainActivity.this, LeaderboardActivity.class);
         startActivity(myIntent);
+    }
+
+    public void setAppLocal(String localCode) {
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            conf.setLocale(new Locale(localCode.toLowerCase()));
+        } else {
+            conf.locale = new Locale(localCode.toLowerCase());
+        }
+        res.updateConfiguration(conf, dm);
     }
 }

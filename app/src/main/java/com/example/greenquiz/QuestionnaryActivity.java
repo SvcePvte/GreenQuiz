@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 public class QuestionnaryActivity extends AppCompatActivity {
 
     private Question[] questions = {
-            new Question("Possedez-vous une voiture ?", 50, 0),
-            new Question("Possedez-vous un vélo ?", 20, 0)
+            new Question("Possedez-vous une voiture ?", 1, 0),
+            /*
+            new Question("Possedez-vous un vélo ?", 0, 1),
+            new Question("Avez-vous déjà pris 10 fois l'avion c'est deux dernière années ?", 1, 0),
+            new Question("Possedez-vous plus de 10 appareils connectés ?", 1, 0),
+            new Question("Avez-vous des enfants ? ", 1, 0),
+
+             */
     };
 
     private Question currentQuestion;
@@ -52,8 +59,10 @@ public class QuestionnaryActivity extends AppCompatActivity {
                 Intent myIntent;
                 if(numQuestion < questions.length - 1)
                     myIntent = new Intent(QuestionnaryActivity.this, QuestionnaryActivity.class);
-                else
-                    myIntent = new Intent( QuestionnaryActivity.this, ResultActivity.class );
+                else {
+                    myIntent = new Intent(QuestionnaryActivity.this, ResultActivity.class);
+                    myIntent.putExtra("score", 4);
+                }
 
                 //
                 score += getAnswerScore();

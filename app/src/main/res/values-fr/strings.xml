@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GreenQuiz</string>
-    <string name="validate_button">Valider FR</string>
+    <string name="app_description">GreenQuiz est une application qui se veut sensible aux emissions de CO² par habitant. Vous pourrez ainsi comparer votre consommation avec d\'autre nationalité et savoir si oui ou non vous consommez comme la moyenne mondial. Alors n\'hésitez pas à lancer un quiz !</string>
+
+    <string name="validate_button">Valider</string>
+    <string name="start_quiz_button">Commencer un Quiz</string>
+    <string name="register_leaderboard_button">Enregistrer dans le classement</string>
+    <string name="translate_app">Traduire en Anglais</string>
+
 </resources>
