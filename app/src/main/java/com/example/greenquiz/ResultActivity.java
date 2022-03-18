@@ -44,7 +44,6 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
         btn_partager.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 openDialog();
