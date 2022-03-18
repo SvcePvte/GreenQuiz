@@ -6,6 +6,8 @@
     <string name="validate_button">Valider</string>
     <string name="start_quiz_button">Commencer un Quiz</string>
     <string name="register_leaderboard_button">Enregistrer dans le classement</string>
-    <string name="translate_app">Traduire en Anglais</string>
+    <string name="translate_app_title">Langues</string>
+    <string name="translate_app_fr">Français</string>
+    <string name="translate_app_en">Anglais</string>
 
 </resources>

@@ -26,16 +26,17 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity implements PopUp.PopUpListener {
 
     private ImageView imageView;
-    private int score = 0;
+    private int score;
 
     private String drapeau;
-    private int classement[] = {0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
-
+    private int classement[] = {0, 10, 20, 30, 40};
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_activity);
 
+        score = getIntent().getIntExtra("score", 0);
         this.imageView = (ImageView) this.findViewById(R.id.imageView);
 
         getDrapeau();
@@ -82,7 +83,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         SQLClient bdd = new SQLClient(this);
         SQLiteDatabase dbW = bdd.getWritableDatabase();
-        dbW.execSQL("insert into Users values(null, '" + pseudo + "', " + 123 + ");");
+        dbW.execSQL("insert into Users values(null, '" + pseudo + "', " + score + ");");
         dbW.close();
 
         Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
@@ -93,14 +94,14 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     public String getDrapeau () {
 
         int borneInf = 0;
-        int borneSup = 100;
-        for (int i = 0; i <= 10  ; i++) {
+        int borneSup = 10;
+        for (int i = 0; i <= classement.length  ; i++) {
            if (borneInf <= this.score && this.score <= borneSup){
                drapeau = Country.values()[i].name().toLowerCase();
                break;
            }
-           borneSup += 100;
-           borneInf += 100;
+           borneSup += 10;
+           borneInf += 10;
        }
         return drapeau;
     }
@@ -130,6 +131,10 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.home:
+                Intent myIntent = new Intent(ResultActivity.this, MainActivity.class);
+                startActivity(myIntent);
+                break;
             case R.id.share:
                 shareScore();
                 break;

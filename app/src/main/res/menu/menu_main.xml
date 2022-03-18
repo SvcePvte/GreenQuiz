@@ -8,9 +8,18 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/translate_app"
-        android:title="@string/translate_app"
-        />
+        android:title="@string/translate_app_title">
+        <menu >
+            <item
+                android:id="@+id/translate_app_fr"
+                android:title="@string/translate_app_fr"
+                />
+            <item
+                android:id="@+id/translate_app_en"
+                android:title="@string/translate_app_en"
+                />
+        </menu>
+    </item>
 
     <item
         android:id="@+id/quitter_button"

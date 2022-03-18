@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setAppLocal("fr");
-
         Button main_btn_lancer = (Button) findViewById(R.id.main_btn_lancer);
         main_btn_lancer.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -37,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
            }
         });
-
-        Toast.makeText(this, "langue" + Locale.getDefault().getDisplayLanguage(), Toast.LENGTH_LONG).show();
 
     }
 
@@ -52,13 +48,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.translate_app:
+            case R.id.translate_app_fr:
+                setAppLocal("fr");
+                Intent monIntent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(monIntent);
+                break;
 
-                if (Locale.getDefault().getDisplayLanguage() == "fr") {
-                    setAppLocal("en");
-                } else {
-                    setAppLocal("fr");
-                }
+            case R.id.translate_app_en:
+                setAppLocal("en");
+                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(myIntent);
                 break;
             case R.id.leaderboard:
                 changeActivityToLeaderboard();

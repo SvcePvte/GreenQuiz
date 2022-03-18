@@ -5,7 +5,9 @@
     <string name="validate_button">Validate EN</string>
     <string name="start_quiz_button">Let\'s start a Quiz</string>
     <string name="register_leaderboard_button">Register in the ranking</string>
-    <string name="translate_app">Translate to French</string>
+    <string name="translate_app_title">Languages</string>
+    <string name="translate_app_fr">French</string>
+    <string name="translate_app_en">English</string>
 
 
 </resources>
