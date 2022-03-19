@@ -14,6 +14,4 @@ public class Language {
     public String getActualLanguage () {
         return actualLanguage;
     }
-
-
 }

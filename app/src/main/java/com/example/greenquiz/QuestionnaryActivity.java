@@ -22,9 +22,7 @@ public class QuestionnaryActivity extends AppCompatActivity {
             new Question("Mangez-vous des produits de saison", 0, 5),
             new Question("Possedez-vous plus de 10 appareils connectés ?", 10, 0),
             new Question("Avez-vous des enfants ? ", 5, 0),
-
              */
-
     };
 
     private Question currentQuestion;
