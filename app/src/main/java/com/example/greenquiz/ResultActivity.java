@@ -76,7 +76,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         savePlayerScoreToBDD(pseudo);
 
-        Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Votre partie, " + pseudo + " a bien été enregistrée", Toast.LENGTH_LONG).show();
 
         Button btn_partager = (Button) findViewById(R.id.result_btn_register);
         btn_partager.setEnabled(false);
