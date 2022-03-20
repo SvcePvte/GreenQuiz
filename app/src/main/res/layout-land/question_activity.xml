@@ -2,44 +2,69 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp">
 
-    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/indentation_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="240dp"
+        android:layout_marginEnd="250dp"
+        android:text="QUESTION [ x  /  n ]"
+        android:textSize="20dp" />
 
-    // QUESTIONS RADIO BOUTONS
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Exemple question"
+        android:textSize="30dp" />
+
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:text="default"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="64dp">
 
         <RadioButton
             android:id="@+id/radio_btn_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Oui"/>
+            android:onClick="onRadioButtonClicked"
+            android:text="Oui" />
 
         <RadioButton
             android:id="@+id/radio_btn_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Non"/>
+            android:minHeight="48dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Non" />
 
     </RadioGroup>
 
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/qestion_btn_valider"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/qestion_btn_valider"
-            android:text="Valider QUIZ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:text="@string/validate_button" />
+
+
 
 </RelativeLayout>

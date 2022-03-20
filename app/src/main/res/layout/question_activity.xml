@@ -11,9 +11,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:text="Exemple question"
         android:textSize="30dp" />
 
@@ -34,8 +34,9 @@
             android:id="@+id/radio_btn_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Non"
-            android:onClick="onRadioButtonClicked"/>
+            android:minHeight="48dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Non" />
 
     </RadioGroup>
 
@@ -53,12 +54,12 @@
 
     <TextView
         android:id="@+id/indentation_question"
-        android:text="QUESTION [ x  /  n ]"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="100dp"
-        android:textSize="20dp"/>
+        android:text="QUESTION [ x  /  n ]"
+        android:textSize="20dp" />
 
 </RelativeLayout>

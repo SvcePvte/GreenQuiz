@@ -7,27 +7,24 @@
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable-anydpi/ic_share.xml" value="0.274" />
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3675" />
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_share.xml" value="0.3675" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_trophy.xml" value="0.3675" />
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_twitter.xml" value="0.274" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/activity_main.xml" value="0.31040564373897706" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/result_activity.xml" value="0.31040564373897706" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/my_row.xml" value="0.5" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/question_activity.xml" value="0.35778985507246375" />
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/result_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/menu/menu_leaderboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Leo/AndroidStudioProjects/GreenQuiz/app/src/main/res/menu/menu_result.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2725" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/editborder.xml" value="0.2725" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2725" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_trophy.xml" value="0.253" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/drawable/ic_twitter.xml" value="0.137" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/activity_leaderboard.xml" value="0.23236331569664903" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/activity_main.xml" value="0.23236331569664903" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/question_activity.xml" value="0.23236331569664903" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout-land/result_activity.xml" value="0.264" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_leaderboard.xml" value="0.2509057971014493" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_leaderboard_land.xml" value="0.26222826086956524" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/activity_questionnaty.xml" value="0.1265625" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/popup.xml" value="0.1" />
+        <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/question_activity.xml" value="0.1" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/questionnary_activity.xml" value="0.1" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/result_activity.xml" value="0.2" />
         <entry key="..\:/Users/SvcePvte/AndroidStudioProjects/GreenQuiz/app/src/main/res/layout/test.xml" value="0.27447916666666666" />
