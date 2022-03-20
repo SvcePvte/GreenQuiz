@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         getDrapeau();
         afficherResultat();
 
-        Button btn_partager = (Button) findViewById(R.id.register_leaderboard_button);
+        Button btn_partager = (Button) findViewById(R.id.result_btn_register);
         btn_partager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +78,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
 
         Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
 
-        Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
+        Button btn_partager = (Button) findViewById(R.id.result_btn_register);
         btn_partager.setEnabled(false);
     }
 
