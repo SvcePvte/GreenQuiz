@@ -1,14 +1,19 @@
 package com.example.greenquiz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,6 +31,9 @@ public class LeaderboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
+
+        //DEBUG LOG IF IS CALLED
+        Log.d("MSG", "LEADERBOARD ACTIVITY");
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -151,5 +159,25 @@ public class LeaderboardActivity extends AppCompatActivity {
         */
 
         dbR.close();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.menu_leaderboard, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent myIntent = new Intent(LeaderboardActivity.this, MainActivity.class);
+                startActivity(myIntent);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

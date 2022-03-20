@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
         <Button
-            android:id="@+id/qestionnary_btn_valider"
+            android:id="@+id/qestion_btn_valider"
             android:text="Valider QUIZ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

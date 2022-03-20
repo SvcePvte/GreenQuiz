@@ -22,7 +22,6 @@ public class PopUp extends AppCompatDialogFragment {
     private EditText editTextPseudo;
     private PopUpListener listener;
 
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -36,7 +35,6 @@ public class PopUp extends AppCompatDialogFragment {
                 .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 })
                 .setPositiveButton("Valider", new DialogInterface.OnClickListener() {

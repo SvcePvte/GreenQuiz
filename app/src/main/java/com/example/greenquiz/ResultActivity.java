@@ -1,22 +1,15 @@
 package com.example.greenquiz;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,7 +74,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
     @Override
     public void sendText(String pseudo) {
 
-        savePlayerScoreInBDD(pseudo);
+        savePlayerScoreToBDD(pseudo);
 
         Toast.makeText(this, "Votre pseudo " + pseudo + " a bien été pris en compte", Toast.LENGTH_LONG).show();
 
@@ -163,7 +156,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         startActivity(sendIntent);
     }
 
-    private void savePlayerScoreInBDD(String pseudo)
+    private void savePlayerScoreToBDD(String pseudo)
     {
         SQLClient bdd = new SQLClient(this);
         SQLiteDatabase dbW = bdd.getWritableDatabase();

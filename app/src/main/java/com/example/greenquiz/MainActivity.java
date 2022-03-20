@@ -9,12 +9,12 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         main_btn_lancer.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, QuestionnaryActivity.class);
+                Intent myIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 myIntent.putExtra("numQuestion",0);
                 myIntent.putExtra("score", 0);
                 startActivity(myIntent);
@@ -48,23 +48,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.leaderboard:
+                changeActivityToLeaderboard();
+                break;
             case R.id.translate_app_fr:
                 setAppLocal("fr");
                 Intent monIntent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(monIntent);
                 break;
-
             case R.id.translate_app_en:
                 setAppLocal("en");
                 Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(myIntent);
                 break;
-            case R.id.leaderboard:
-                changeActivityToLeaderboard();
             case R.id.quitter_button:
                 System.exit(0);
                 break;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
