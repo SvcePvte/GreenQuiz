@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="horizontal">
+
+    // QUESTIONS RADIO BOUTONS
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/radio_btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oui"/>
+
+        <RadioButton
+            android:id="@+id/radio_btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Non"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/qestion_btn_valider"
+            android:text="Valider QUIZ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</RelativeLayout>

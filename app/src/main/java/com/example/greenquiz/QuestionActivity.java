@@ -7,12 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QuestionnaryActivity extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
 
     private Question[] questions = {
             new Question("Possedez-vous une voiture ?", 10, 0),
@@ -22,9 +21,7 @@ public class QuestionnaryActivity extends AppCompatActivity {
             new Question("Mangez-vous des produits de saison", 0, 5),
             new Question("Possedez-vous plus de 10 appareils connectés ?", 10, 0),
             new Question("Avez-vous des enfants ? ", 5, 0),
-
              */
-
     };
 
     private Question currentQuestion;
@@ -34,7 +31,7 @@ public class QuestionnaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.questionnary_activity);
+        setContentView(R.layout.question_activity);
 
         score = getIntent().getIntExtra("score", 0);
         int numQuestion = getIntent().getIntExtra("numQuestion", 0);
@@ -51,18 +48,16 @@ public class QuestionnaryActivity extends AppCompatActivity {
         int question_actuel = numQuestion+1;
         indentation.setText("QUESTION [ " + question_actuel + " / " + nb_questions + " ]");
 
-        Button button = findViewById(R.id.qestionnary_btn_valider);
-        button.setEnabled(false);
-
-        Button qestionnary_btn_valider = (Button) findViewById(R.id.qestionnary_btn_valider);
-        qestionnary_btn_valider.setOnClickListener(new View.OnClickListener() {
+        Button question_btn_valider = (Button) findViewById(R.id.qestion_btn_valider);
+        question_btn_valider.setEnabled(false);
+        question_btn_valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent;
                 if(numQuestion < questions.length - 1)
-                    myIntent = new Intent(QuestionnaryActivity.this, QuestionnaryActivity.class);
+                    myIntent = new Intent(QuestionActivity.this, QuestionActivity.class);
                 else {
-                    myIntent = new Intent(QuestionnaryActivity.this, ResultActivity.class);
+                    myIntent = new Intent(QuestionActivity.this, ResultActivity.class);
                     myIntent.putExtra("score", score);
                 }
 
@@ -80,7 +75,7 @@ public class QuestionnaryActivity extends AppCompatActivity {
 
         if (((RadioButton)v).isChecked())
         {
-            Button button = findViewById(R.id.qestionnary_btn_valider);
+            Button button = findViewById(R.id.qestion_btn_valider);
             button.setEnabled(true);
         }
 

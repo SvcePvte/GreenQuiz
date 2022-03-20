@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/leaderboard"
-        android:title="leaderboard"
         android:icon="@drawable/ic_trophy"
+        android:title="leaderboard"
         app:showAsAction="always" />
 
     <item
