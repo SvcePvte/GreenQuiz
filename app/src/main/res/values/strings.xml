@@ -8,6 +8,8 @@
     <string name="translate_app_title">Languages</string>
     <string name="translate_app_fr">French</string>
     <string name="translate_app_en">English</string>
+    <string name="result_btn_twitter">Share on Twitter</string>
+    <string name="result_see_leaderbord_btn">See the Leaderbord</string>
 
 
 </resources>

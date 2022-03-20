@@ -42,7 +42,7 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         getDrapeau();
         afficherResultat();
 
-        Button btn_partager = (Button) findViewById(R.id.result_btn_partager);
+        Button btn_partager = (Button) findViewById(R.id.register_leaderboard_button);
         btn_partager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,5 +9,8 @@
     <string name="translate_app_title">Langues</string>
     <string name="translate_app_fr">Français</string>
     <string name="translate_app_en">Anglais</string>
+    <string name="result_btn_twitter">Poster sur Twitter</string>
+    <string name="result_see_leaderbord_btn">Voir le classement</string>
+
 
 </resources>
