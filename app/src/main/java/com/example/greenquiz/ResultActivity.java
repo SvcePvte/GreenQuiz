@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +35,8 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
         score = getIntent().getIntExtra("score", 0);
         this.imageView = (ImageView) this.findViewById(R.id.imageView);
 
+        Log.d("MSG", "" + score);
+
         getDrapeau();
         afficherResultat();
 
@@ -62,9 +65,13 @@ public class ResultActivity extends AppCompatActivity implements PopUp.PopUpList
                         + "";
                 Uri uri = Uri.parse(tweetUrl);
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
+
+
             }
         });
     }
+
+
 
     public void openDialog() {
         PopUp popup = new PopUp();

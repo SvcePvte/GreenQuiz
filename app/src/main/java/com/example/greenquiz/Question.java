@@ -2,6 +2,8 @@ package com.example.greenquiz;
 
 public class Question {
 
+
+
     private String libelle;
     private int nbOui;
     private int nbNon;

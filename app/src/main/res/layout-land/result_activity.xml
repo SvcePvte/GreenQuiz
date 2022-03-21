@@ -42,33 +42,33 @@
         android:id="@+id/result_btn_classement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result_see_leaderbord_btn"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="275dp"
         android:layout_marginRight="500dp"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:text="@string/result_see_leaderbord_btn" />
 
     <Button
         android:id="@+id/result_btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_leaderboard_button"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="275dp"
         android:layout_marginRight="250dp"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:text="@string/register_leaderboard_button" />
 
     <Button
         android:id="@+id/reslt_btn_twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/twitter"
-        android:backgroundTint="@color/twitter"
-        android:text="@string/result_btn_twitter"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="275dp"
         android:layout_marginRight="50dp"
-        android:padding="16dp"/>
+        android:background="@color/twitter"
+        android:backgroundTint="@color/twitter"
+        android:padding="16dp"
+        android:text="@string/result_btn_twitter" />
 
 
 </RelativeLayout>
