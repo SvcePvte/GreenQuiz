@@ -15,10 +15,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+    public final static int QUIZ_CANCELED = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +35,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 myIntent.putExtra("numQuestion",0);
                 myIntent.putExtra("score", 0);
-                startActivity(myIntent);
+                //startActivity(myIntent);
+                startActivityForResult(myIntent, MainActivity.QUIZ_CANCELED);
            }
         });
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == MainActivity.QUIZ_CANCELED)
+        {
+            Toast.makeText(this, "Le quiz vient d'être annulé", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

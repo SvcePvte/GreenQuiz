@@ -174,6 +174,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             case R.id.home:
                 Intent myIntent = new Intent(LeaderboardActivity.this, MainActivity.class);
                 startActivity(myIntent);
+                finish();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
