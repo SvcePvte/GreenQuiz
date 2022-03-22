@@ -10,5 +10,5 @@
 
     <color name="twitter">#1DA1F2</color>
     <color name="button">#33CF13</color>
-    <color name="leaderboard">#CFC613</color>
+    <color name="button_disabled">#7E837C</color>
 </resources>

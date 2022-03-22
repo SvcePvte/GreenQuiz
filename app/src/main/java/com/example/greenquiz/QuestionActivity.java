@@ -20,16 +20,13 @@ public class QuestionActivity extends AppCompatActivity {
     private Question[] questions = {
             new Question("Possedez-vous une voiture ?", 10, 0),
             new Question("Possedez-vous un vélo ?", 0, 5),
-            /*
             new Question("Avez-vous déjà pris 10 fois l'avion c'est deux dernière années ?", 10, 0),
             new Question("Mangez-vous des produits de saison", 0, 5),
             new Question("Possedez-vous plus de 10 appareils connectés ?", 10, 0),
             new Question("Avez-vous des enfants ? ", 5, 0),
-             */
     };
 
     private Question currentQuestion;
-
     private int score = 0;
 
     @Override

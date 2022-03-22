@@ -64,9 +64,6 @@
         android:layout_marginStart="120dp"
         android:layout_marginEnd="120dp"
         android:text="@string/validate_button"
-        android:background="@color/button"
+        android:background="@drawable/default_button"
         android:textColor="@color/white"/>
-
-
-
 </RelativeLayout>

@@ -30,9 +30,11 @@ public class SQLClient extends SQLiteOpenHelper {
         db.execSQL(SQLClient.SQL_CREATE);
 
         db.execSQL("insert into Users values(null, 'Paul', 10);");
-        db.execSQL("insert into Users values(null, 'Léo', 40);");
-        db.execSQL("insert into Users values(null, 'Max', 30);");
-        db.execSQL("insert into Users values(null, 'Guillaume', 25);");
+        db.execSQL("insert into Users values(null, 'Olivier (nice)', 69);");
+        db.execSQL("insert into Users values(null, 'Max', 25);");
+        db.execSQL("insert into Users values(null, 'Léo', 30);");
+        db.execSQL("insert into Users values(null, 'Shrek', 5);");
+
     }
 
     @Override
