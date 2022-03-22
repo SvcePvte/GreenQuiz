@@ -9,7 +9,7 @@
         android:layout_centerVertical="true"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:text="GreenQui est une application qui se veut sensible aux emissions de CO² par habitant. Vous pourrez ainsi comparer votre consommation avec d'autre nationalité et savoir si oui ou non vous consommez comme la moyenne mondial. Alors n'hésitez pas à lancer un quiz !" />
+        android:text="@string/app_description" />
 
     <LinearLayout
         android:id="@+id/buttons"
