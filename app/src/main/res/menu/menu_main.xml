@@ -23,6 +23,6 @@
 
     <item
         android:id="@+id/quitter_button"
-        android:title="Quitter"
+        android:title="@string/exit_menu"
         />
 </menu>

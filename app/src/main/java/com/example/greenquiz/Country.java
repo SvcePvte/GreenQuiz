@@ -1,7 +1,7 @@
 package com.example.greenquiz;
 
 public enum Country {
-    FRANCE("FRANCE","Bravo, vous êtes Français !",
+    FRANCE("FRANCE","Votre consommation est importante, elle est de 5.2 tonnes de CO². Pour rappel, votre consommation est proche de la moyenne mondial qui est de 4.91 tonnes de CO² par habitant.",
             R.drawable.france, "FR"),
     EU("CHINE","Votre consommation est importante, elle est de 7.72 tonnes de CO². Pour rappel, votre consommation est près de 1.5  fois supérieur à la moyenne mondial qui est de 4.91 tonnes de CO² par habitant.",
             R.drawable.eu, "CN"),

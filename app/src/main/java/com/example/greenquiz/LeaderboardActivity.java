@@ -106,10 +106,10 @@ public class LeaderboardActivity extends AppCompatActivity {
         dbW.insert("Users", null, valeursClient2);
          */
 
-        dbW.execSQL("insert into Users values(null, 'Paul', 100);");
-        dbW.execSQL("insert into Users values(null, 'Léo', 500);");
-        dbW.execSQL("insert into Users values(null, 'Max', 300);");
-        dbW.execSQL("insert into Users values(null, 'Guillaume', 800);");
+        dbW.execSQL("insert into Users values(null, 'Paul', 10);");
+        dbW.execSQL("insert into Users values(null, 'Léo', 40);");
+        dbW.execSQL("insert into Users values(null, 'Max', 30);");
+        dbW.execSQL("insert into Users values(null, 'Guillaume', 25);");
 
         dbW.close();
     }

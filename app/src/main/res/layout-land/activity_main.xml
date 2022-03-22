@@ -21,7 +21,9 @@
             android:id="@+id/main_btn_lancer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Commencer un Quiz" />
+            android:text="Commencer un Quiz"
+            android:background="@color/button"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -22,7 +22,9 @@
             android:id="@+id/main_btn_lancer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/start_quiz_button" />
+            android:text="@string/start_quiz_button"
+            android:background="@color/button"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </RelativeLayout>
